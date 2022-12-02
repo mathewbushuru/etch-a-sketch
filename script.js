@@ -11,8 +11,9 @@ numSquaresBtn.addEventListener("click", () => {
   drawGrid(numSquares);
 });
 
+let penColor = "#666";
 function pixelateDiv(e) {
-  e.target.style.background = "#666";
+  e.target.style.background = `${penColor}`;
 }
 
 let allSquareDivs;
@@ -37,11 +38,17 @@ function drawGrid(numSquares) {
 drawGrid(numSquares);
 
 // shift for penup and pendown
+// CTRL for random  color
 document.addEventListener("keydown", (e) => {
   if (e.key === "Shift") {
     allSquareDivs.forEach((squareDiv) =>
       squareDiv.removeEventListener("mouseenter", pixelateDiv)
     );
+  }
+  if (e.key === "Control") {
+    penColor = `rgb(${Math.random() * 255},${Math.random() * 255},${
+      Math.random() * 255
+    })`;
   }
 });
 document.addEventListener("keyup", (e) => {
@@ -49,5 +56,8 @@ document.addEventListener("keyup", (e) => {
     allSquareDivs.forEach((squareDiv) =>
       squareDiv.addEventListener("mouseenter", pixelateDiv)
     );
+  }
+  if(e.key==="Control"){
+    penColor="#666"
   }
 });
