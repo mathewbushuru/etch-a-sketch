@@ -11,10 +11,10 @@ body {
 }
 .rowContainer {
   display: flex;
-  height: calc(100vh / 16);
+  /* height: calc(100vh / 16); */
 }
 .squareDiv {
-  width: calc(100vw/16);
+  /* width: calc(100vw/16); */
   height: 100%;
   border: 2px solid #dedede;
 }
