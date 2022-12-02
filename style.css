@@ -35,6 +35,9 @@ header{
 button{
   padding: 5px;
 }
+h1{
+  margin: 5px;
+}
 em{
   font-weight: normal;
 }

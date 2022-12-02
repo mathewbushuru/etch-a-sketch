@@ -50,6 +50,9 @@ document.addEventListener("keydown", (e) => {
       Math.random() * 255
     })`;
   }
+  if (e.key==="d"){
+    penColor="#fff"
+  }
 });
 document.addEventListener("keyup", (e) => {
   if (e.key === "Shift") {
@@ -58,6 +61,9 @@ document.addEventListener("keyup", (e) => {
     );
   }
   if(e.key==="Control"){
+    penColor="#666"
+  }
+  if (e.key==="d"){
     penColor="#666"
   }
 });
