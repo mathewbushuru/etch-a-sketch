@@ -15,6 +15,7 @@ function pixelateDiv(e) {
   e.target.style.background = "#666";
 }
 
+let allSquareDivs;
 function drawGrid(numSquares) {
   for (let row = 0; row < numSquares; row++) {
     let rowContainer = document.createElement("div");
@@ -30,11 +31,23 @@ function drawGrid(numSquares) {
     }
     gridContainer.appendChild(rowContainer);
   }
+  allSquareDivs = document.querySelectorAll(".squareDiv");
 }
 
 drawGrid(numSquares);
 
-// allSquareDivs = document.querySelectorAll(".squareDiv");
-// allSquareDivs.forEach((squareDiv) =>
-//   squareDiv.addEventListener("mouseenter", pixelateDiv)
-// );
+// shift for penup and pendown
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Shift") {
+    allSquareDivs.forEach((squareDiv) =>
+      squareDiv.removeEventListener("mouseenter", pixelateDiv)
+    );
+  }
+});
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Shift") {
+    allSquareDivs.forEach((squareDiv) =>
+      squareDiv.addEventListener("mouseenter", pixelateDiv)
+    );
+  }
+});
