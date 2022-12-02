@@ -1,13 +1,27 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+}
 body {
   padding: 0;
   margin: 0;
   max-height: 100vh;
   max-width: 100vw;
+  overflow: hidden;
+}
+header{
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
 }
 #gridContainer {
   display: flex;
   flex-direction: column;
-  max-height: 100%;
+  align-items: center;
+  max-height: 90%;
 }
 .rowContainer {
   display: flex;
@@ -16,5 +30,8 @@ body {
 .squareDiv {
   /* width: calc(100vw/16); */
   height: 100%;
-  border: 2px solid #dedede;
+  /* border: 2px solid #dedede; */
+}
+button{
+  padding: 5px;
 }
